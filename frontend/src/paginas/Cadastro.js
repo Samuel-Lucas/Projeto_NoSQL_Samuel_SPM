@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import Axios from 'axios'
 
@@ -12,6 +12,7 @@ export default function Cadastro () {
     const history = useHistory()
 
     const cadastrar = () => {
+
         Axios.post('http://localhost:3001/cadastrar',
         {
             categoria: categoria,
@@ -25,19 +26,9 @@ export default function Cadastro () {
         history.push({
             pathname: '/Produtos',
         })
+
+        window.location.reload()
     }
-
-  /*  const history = useHistory()
-
-    useEffect(() => {
-
-        if(cadastrar) {
-            
-            history.push({
-                pathname: '/Produtos',
-            })
-        }
-    }, [cadastrar]) */
 
     return (
         <div>
